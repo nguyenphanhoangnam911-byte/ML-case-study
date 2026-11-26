@@ -1,7 +1,0 @@
-# Case study Monte Carlo Control (định giá phòng khách sạn)
-# Python 3.13.x. Đã chạy lại với hotel_bookings.csv; kết quả khớp số liệu trong doc.
-numpy==2.5.3
-pandas==3.0.5
-scipy==1.18.1
-matplotlib==3.11.2
-scikit-learn==1.9.1
