@@ -1,10 +1,9 @@
-# Tiểu luận Machine Learning: minh chứng mã nguồn cho hai case study
+# Tiểu luận Machine Learning: mã nguồn cho hai case study
 
 Repo này chứa mã nguồn, kết quả chạy và tài liệu kiểm chứng của hai case study trong báo cáo (Mục 4–7).
 
 - Repo: https://github.com/nguyenphanhoangnam911-byte/ML-case-study
-- Phiên bản nộp bài: [ĐIỀN tag hoặc mã commit khi khóa bản nộp]
-
+ 
 | Case | Thuật toán | Thư mục |
 |---|---|---|
 | Phân cụm hành vi khách hàng bằng mô hình RFM | K-Means, Mini-Batch K-Means, K-Medoids (PAM) | [`case_rfm_clustering/`](case_rfm_clustering/) |
