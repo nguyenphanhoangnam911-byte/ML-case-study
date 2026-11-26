@@ -28,14 +28,6 @@ Mỗi case có hai cách cài đặt: dùng thư viện, và tự cài đặt t�
     └── (cấu trúc tương tự)
 ```
 
-## Thành viên và đóng góp
-
-> [ĐIỀN] Họ tên, MSSV, phần phụ trách, tên tài khoản GitHub của từng thành viên. Lịch sử commit là một phần minh chứng đóng góp, vì vậy mỗi người commit phần của mình từ tài khoản của mình.
-
-| Họ tên | MSSV | Phần phụ trách | Tài khoản GitHub |
-|---|---|---|---|
-| | | | |
-
 ## Dữ liệu
 
 Repo **không** chứa file dữ liệu. Nguồn và cách tải nằm trong README của từng case.
