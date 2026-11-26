@@ -4,6 +4,8 @@ Phân cụm khách hàng từ dữ liệu giao dịch bằng mô hình Recency �
 
 Notebook: [`notebooks/RFM_Customer_Clustering.ipynb`](notebooks/RFM_Customer_Clustering.ipynb)
 
+Mã tự cài đặt: [`src/rfm_scratch.py`](src/rfm_scratch.py). Bản tự cài đặt K-Means, Mini-Batch K-Means, K-Medoids và các chỉ số (chỉ dùng NumPy). Script nhiều seed cho Mục 7.1: [`experiments/`](experiments/).
+
 ## 1. Dữ liệu
 
 - Bộ dữ liệu: *Online Retail* (UCI Machine Learning Repository), 541.909 dòng × 8 cột, 01/12/2010 – 09/12/2011.

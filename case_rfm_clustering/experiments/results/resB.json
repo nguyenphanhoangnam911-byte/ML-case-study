@@ -1,0 +1,275 @@
+{
+ "n_out": 62,
+ "rows": [
+  {
+   "seed": 0,
+   "space": "X",
+   "model": "K-Means",
+   "ari_core": 0.5299130623775975,
+   "ari_base": 0.9974881279954804,
+   "n_out_clusters": 2,
+   "min_size": 6
+  },
+  {
+   "seed": 0,
+   "space": "X",
+   "model": "Mini-Batch K-Means",
+   "ari_core": 0.4342624432447077,
+   "ari_base": 0.6560031387471276,
+   "n_out_clusters": 1,
+   "min_size": 24
+  },
+  {
+   "seed": 0,
+   "space": "X",
+   "model": "K-Medoids (PAM)",
+   "ari_core": 0.7704590433890488,
+   "ari_base": 1.0,
+   "n_out_clusters": 0,
+   "min_size": 615
+  },
+  {
+   "seed": 0,
+   "space": "X_log",
+   "model": "K-Means",
+   "ari_core": 0.6886911851105091,
+   "ari_base": 0.9972896311337821,
+   "n_out_clusters": 0,
+   "min_size": 545
+  },
+  {
+   "seed": 0,
+   "space": "X_log",
+   "model": "Mini-Batch K-Means",
+   "ari_core": 0.5925923265507899,
+   "ari_base": 0.6348143070655564,
+   "n_out_clusters": 0,
+   "min_size": 893
+  },
+  {
+   "seed": 0,
+   "space": "X_log",
+   "model": "K-Medoids (PAM)",
+   "ari_core": 0.9404763277534022,
+   "ari_base": 1.0,
+   "n_out_clusters": 0,
+   "min_size": 912
+  },
+  {
+   "seed": 1,
+   "space": "X",
+   "model": "K-Means",
+   "ari_core": 0.5716877813117877,
+   "ari_base": 0.9812551604397721,
+   "n_out_clusters": 1,
+   "min_size": 11
+  },
+  {
+   "seed": 1,
+   "space": "X",
+   "model": "Mini-Batch K-Means",
+   "ari_core": 0.4641571602908954,
+   "ari_base": 0.8582454975056186,
+   "n_out_clusters": 1,
+   "min_size": 50
+  },
+  {
+   "seed": 1,
+   "space": "X",
+   "model": "K-Medoids (PAM)",
+   "ari_core": 0.9520981251893609,
+   "ari_base": 0.7801427348664833,
+   "n_out_clusters": 0,
+   "min_size": 615
+  },
+  {
+   "seed": 1,
+   "space": "X_log",
+   "model": "K-Means",
+   "ari_core": 0.6898683989925005,
+   "ari_base": 0.9796470935391552,
+   "n_out_clusters": 0,
+   "min_size": 545
+  },
+  {
+   "seed": 1,
+   "space": "X_log",
+   "model": "Mini-Batch K-Means",
+   "ari_core": 0.9216099039516764,
+   "ari_base": 0.8381168806649019,
+   "n_out_clusters": 0,
+   "min_size": 774
+  },
+  {
+   "seed": 1,
+   "space": "X_log",
+   "model": "K-Medoids (PAM)",
+   "ari_core": 0.9404763277534022,
+   "ari_base": 0.9808755254480542,
+   "n_out_clusters": 0,
+   "min_size": 912
+  },
+  {
+   "seed": 2,
+   "space": "X",
+   "model": "K-Means",
+   "ari_core": 0.5303943988634798,
+   "ari_base": 0.9925388445911097,
+   "n_out_clusters": 2,
+   "min_size": 6
+  },
+  {
+   "seed": 2,
+   "space": "X",
+   "model": "Mini-Batch K-Means",
+   "ari_core": 0.3417177296537328,
+   "ari_base": 0.9726881021370636,
+   "n_out_clusters": 0,
+   "min_size": 157
+  },
+  {
+   "seed": 2,
+   "space": "X",
+   "model": "K-Medoids (PAM)",
+   "ari_core": 0.8676141051627091,
+   "ari_base": 0.7801427348664833,
+   "n_out_clusters": 0,
+   "min_size": 625
+  },
+  {
+   "seed": 2,
+   "space": "X_log",
+   "model": "K-Means",
+   "ari_core": 0.7120748986474708,
+   "ari_base": 0.9894632523139636,
+   "n_out_clusters": 0,
+   "min_size": 566
+  },
+  {
+   "seed": 2,
+   "space": "X_log",
+   "model": "Mini-Batch K-Means",
+   "ari_core": 0.9074650525372915,
+   "ari_base": 0.9304954071331614,
+   "n_out_clusters": 0,
+   "min_size": 721
+  },
+  {
+   "seed": 2,
+   "space": "X_log",
+   "model": "K-Medoids (PAM)",
+   "ari_core": 0.9593316876090628,
+   "ari_base": 0.9808755254480542,
+   "n_out_clusters": 0,
+   "min_size": 912
+  },
+  {
+   "seed": 3,
+   "space": "X",
+   "model": "K-Means",
+   "ari_core": 0.5293631919776715,
+   "ari_base": 0.9935577324703859,
+   "n_out_clusters": 2,
+   "min_size": 6
+  },
+  {
+   "seed": 3,
+   "space": "X",
+   "model": "Mini-Batch K-Means",
+   "ari_core": 0.43828873556750564,
+   "ari_base": 0.7192441471822119,
+   "n_out_clusters": 1,
+   "min_size": 26
+  },
+  {
+   "seed": 3,
+   "space": "X",
+   "model": "K-Medoids (PAM)",
+   "ari_core": 0.7704590433890488,
+   "ari_base": 1.0,
+   "n_out_clusters": 0,
+   "min_size": 615
+  },
+  {
+   "seed": 3,
+   "space": "X_log",
+   "model": "K-Means",
+   "ari_core": 0.6886911851105091,
+   "ari_base": 0.9959368050648326,
+   "n_out_clusters": 0,
+   "min_size": 545
+  },
+  {
+   "seed": 3,
+   "space": "X_log",
+   "model": "Mini-Batch K-Means",
+   "ari_core": 0.768824426505571,
+   "ari_base": 0.7729311404482218,
+   "n_out_clusters": 0,
+   "min_size": 524
+  },
+  {
+   "seed": 3,
+   "space": "X_log",
+   "model": "K-Medoids (PAM)",
+   "ari_core": 0.9404763277534022,
+   "ari_base": 1.0,
+   "n_out_clusters": 0,
+   "min_size": 912
+  },
+  {
+   "seed": 4,
+   "space": "X",
+   "model": "K-Means",
+   "ari_core": 0.5303943988634798,
+   "ari_base": 0.995036748936311,
+   "n_out_clusters": 2,
+   "min_size": 6
+  },
+  {
+   "seed": 4,
+   "space": "X",
+   "model": "Mini-Batch K-Means",
+   "ari_core": 0.6170985432297972,
+   "ari_base": 0.8262018852732592,
+   "n_out_clusters": 0,
+   "min_size": 436
+  },
+  {
+   "seed": 4,
+   "space": "X",
+   "model": "K-Medoids (PAM)",
+   "ari_core": 0.8676141051627091,
+   "ari_base": 1.0,
+   "n_out_clusters": 0,
+   "min_size": 625
+  },
+  {
+   "seed": 4,
+   "space": "X_log",
+   "model": "K-Means",
+   "ari_core": 0.6898032747925362,
+   "ari_base": 0.9936070583176528,
+   "n_out_clusters": 0,
+   "min_size": 545
+  },
+  {
+   "seed": 4,
+   "space": "X_log",
+   "model": "Mini-Batch K-Means",
+   "ari_core": 0.8895655716659219,
+   "ari_base": 0.6979290761676925,
+   "n_out_clusters": 0,
+   "min_size": 668
+  },
+  {
+   "seed": 4,
+   "space": "X_log",
+   "model": "K-Medoids (PAM)",
+   "ari_core": 0.9444159209918964,
+   "ari_base": 1.0,
+   "n_out_clusters": 0,
+   "min_size": 951
+  }
+ ]
+}

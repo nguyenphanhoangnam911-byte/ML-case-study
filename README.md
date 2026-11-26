@@ -20,6 +20,8 @@ Mỗi case có hai cách cài đặt: dùng thư viện, và tự cài đặt t�
 │   ├── README.md
 │   ├── requirements.txt
 │   ├── notebooks/
+│   ├── src/             # bản tự cài đặt (NumPy)
+│   ├── experiments/     # script so sánh A, B nhiều seed (chỉ case RFM)
 │   ├── results/
 │   └── docs/            # bảng ánh xạ công thức → code, nhật ký AI
 └── case_mc_pricing/

@@ -4,6 +4,8 @@ Dùng Monte Carlo Control để học chính sách giá cho 10 phòng trong 30 n
 
 Notebook: [`notebooks/Dynamic_Pricing_MC_Control.ipynb`](notebooks/Dynamic_Pricing_MC_Control.ipynb)
 
+Mã tự cài đặt: [`src/mc_pricing.py`](src/mc_pricing.py). Bộ mô phỏng, quy hoạch động và các biến thể Monte Carlo Control (bản tự cài đặt, kèm bản batch scikit-learn).
+
 ## 1. Dữ liệu
 
 - Bộ dữ liệu: *Hotel Booking Demand* (Antonio, de Almeida & Nunes, 2019), 119.390 dòng. Dùng City Hotel, phòng loại A.
