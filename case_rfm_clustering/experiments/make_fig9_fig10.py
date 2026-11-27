@@ -1,5 +1,5 @@
-"""Hình 9 (K-Means và PAM từng bước) và Hình 10 (ARI trước/sau khi bỏ outlier).
-Chạy: RFM_DATA=/đường/dẫn/data.csv python experiments/make_fig9_fig10.py"""
+"""Figure: K-Means and PAM step by step; Figure: ARI before/after removing outliers.
+Run: RFM_DATA=/path/to/data.csv python experiments/make_fig9_fig10.py"""
 import sys,json,numpy as np
 import os
 HERE=os.path.dirname(os.path.abspath(__file__)); ROOT=os.path.join(HERE,'..')
@@ -34,39 +34,39 @@ lab_km,_=km._assign_clusters(M,path[-1]); lab_pam,_=pam._assign_clusters(D,med)
 ix,iy=0,2
 def scat(ax,lab,title):
     for k in range(K): ax.scatter(M[lab==k,ix],M[lab==k,iy],s=4,alpha=.35,color=C[k],lw=0)
-    ax.set_xlabel('Recency (log-chuẩn hóa)' if False else 'Recency (chuẩn hóa)'); ax.set_ylabel('Monetary (log1p, chuẩn hóa)'); ax.set_title(title,fontsize=10,loc='left')
+    ax.set_xlabel('Recency (standardized)'); ax.set_ylabel('Monetary (log1p, standardized)'); ax.set_title(title,fontsize=10,loc='left')
 fig,ax=plt.subplots(2,2,figsize=(11,8.4))
-a=ax[0,0]; lab0,_=km._assign_clusters(M,path[0]); scat(a,lab_km,f'(a) K-Means: quỹ đạo 4 tâm qua {n_it} vòng lặp')
+a=ax[0,0]; lab0,_=km._assign_clusters(M,path[0]); scat(a,lab_km,f'(a) K-Means: trajectories of the 4 centroids over {n_it} iterations')
 for k in range(K):
     a.plot(path[:,k,ix],path[:,k,iy],'-',color='k',lw=1,alpha=.8)
     a.scatter(path[:,k,ix],path[:,k,iy],s=14,color='k',zorder=3)
     a.scatter(*path[0,k,[ix,iy]],marker='s',s=70,facecolor='white',edgecolor='k',zorder=4)
     a.scatter(*path[-1,k,[ix,iy]],marker='*',s=240,facecolor=C[k],edgecolor='k',zorder=5)
-a.text(.02,.03,'ô vuông: tâm khởi tạo · sao: tâm cuối',transform=a.transAxes,fontsize=8)
-b=ax[0,1]; b.plot(range(1,n_it+1),hist,'o-',color=C[0]); b.set_xlabel('Vòng lặp'); b.set_ylabel('WCSS J'); b.set_title('(b) WCSS giảm đơn điệu sau mỗi vòng',fontsize=10,loc='left')
+a.text(.02,.03,'square: initial centroid · star: final centroid',transform=a.transAxes,fontsize=8)
+b=ax[0,1]; b.plot(range(1,n_it+1),hist,'o-',color=C[0]); b.set_xlabel('Iteration'); b.set_ylabel('WCSS J'); b.set_title('(b) WCSS decreases monotonically with each iteration',fontsize=10,loc='left')
 b.annotate(f'{hist[0]:.0f}',(1,hist[0]),textcoords='offset points',xytext=(6,0),fontsize=8); b.annotate(f'{hist[-1]:.0f}',(n_it,hist[-1]),textcoords='offset points',xytext=(-6,8),fontsize=8,ha='right')
-c=ax[1,0]; scat(c,lab_pam,f'(c) PAM: medoid ban đầu → sau {len(ph)-1} lần hoán đổi')
+c=ax[1,0]; scat(c,lab_pam,f'(c) PAM: initial medoids → after {len(ph)-1} swaps')
 for k in range(K):
     c.scatter(*M[mpath[0,k],[ix,iy]],marker='s',s=70,facecolor='white',edgecolor='k',zorder=4)
     c.scatter(*M[med[k],[ix,iy]],marker='*',s=240,facecolor=C[k],edgecolor='k',zorder=5)
 for s in range(1,len(mpath)):
     sl=np.flatnonzero(mpath[s]!=mpath[s-1])[0]
     c.annotate('',xy=M[mpath[s,sl],[ix,iy]],xytext=M[mpath[s-1,sl],[ix,iy]],arrowprops=dict(arrowstyle='->',color='k',lw=.9,alpha=.7))
-c.text(.02,.03,'ô vuông: medoid khởi tạo · sao: medoid cuối · mũi tên: hoán đổi giữ lại',transform=c.transAxes,fontsize=8)
-d=ax[1,1]; d.step(range(len(ph)),ph,where='post',marker='o',color=C[1]); d.set_xlabel('Lần hoán đổi được giữ'); d.set_ylabel('Tổng chi phí tuyệt đối T'); d.set_title('(d) Chi phí T giảm sau mỗi hoán đổi tốt nhất',fontsize=10,loc='left')
-fig.suptitle('Từng bước của K-Means và K-Medoids (PAM) trên 4.320 khách hàng (K = 4, seed 7, không gian X_log)',fontsize=11,x=.01,ha='left')
+c.text(.02,.03,'square: initial medoid · star: final medoid · arrow: accepted swap',transform=c.transAxes,fontsize=8)
+d=ax[1,1]; d.step(range(len(ph)),ph,where='post',marker='o',color=C[1]); d.set_xlabel('Accepted swap'); d.set_ylabel('Total absolute cost T'); d.set_title('(d) Cost T decreases after each best swap',fontsize=10,loc='left')
+fig.suptitle('K-Means and K-Medoids (PAM) step by step on 4,320 customers (K = 4, seed 7, X_log space)',fontsize=11,x=.01,ha='left')
 fig.tight_layout(rect=(0,0,1,.97)); fig.savefig(os.path.join(OUT,'fig9_algorithm_steps.png'),dpi=160); plt.close(fig)
 # --- outlier before/after
 R=json.load(open(os.path.join(HERE,'results','resB.json')))
 models=['K-Means','Mini-Batch K-Means','K-Medoids (PAM)']; fig,ax=plt.subplots(1,2,figsize=(10.5,4.2),sharey=True)
-for a,sp,t in zip(ax,['X','X_log'],['Không gian X (chuẩn hóa)','Không gian X_log (log1p + chuẩn hóa)']):
+for a,sp,t in zip(ax,['X','X_log'],['Space X (standardized)','Space X_log (log1p + standardized)']):
     for i,m in enumerate(models):
         v=[r['ari_core'] for r in R['rows'] if r['space']==sp and r['model']==m]
         a.bar(i,np.mean(v),yerr=np.std(v),color=C[i],capsize=4,width=.6); a.scatter([i]*len(v),v,color='k',s=12,zorder=3)
         a.text(i,.03,f'{np.mean(v):.2f}',ha='center',color='w',fontsize=10,fontweight='bold')
     a.set_xticks(range(3)); a.set_xticklabels(['K-Means','Mini-Batch','K-Medoids'],fontsize=9); a.set_title(t,fontsize=10,loc='left'); a.set_ylim(0,1.05)
-ax[0].set_ylabel('ARI giữa nhãn trước và sau khi bỏ outlier')
-fig.suptitle(f'Mức thay đổi nhãn khi bỏ {R["n_out"]} outlier (|z|>3): ARI trung bình ± độ lệch chuẩn, 5 seed (chấm: từng seed)',fontsize=10.5,x=.01,ha='left')
+ax[0].set_ylabel('ARI between labels before and after outlier removal')
+fig.suptitle(f'Label change after removing {R["n_out"]} outliers (|z|>3): mean ARI ± std, 5 seeds (dots: individual seeds)',fontsize=10.5,x=.01,ha='left')
 fig.tight_layout(rect=(0,0,1,.93)); fig.savefig(os.path.join(OUT,'fig10_outlier_removal.png'),dpi=160)
 for sp in ['X','X_log']:
     print(sp,{m:round(float(np.mean([r['ari_core'] for r in R['rows'] if r['space']==sp and r['model']==m])),3) for m in models})
