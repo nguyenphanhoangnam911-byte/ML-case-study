@@ -28,6 +28,7 @@ pip install -r requirements.txt
 2. Seed cố định (10 seed cho các thí nghiệm), 100.000 episode mỗi lần chạy.
 3. Thời gian chạy: khoảng 20 phút cho toàn bộ notebook (đo lại ngày 28/11/2026: 1.219 giây trên máy 2 nhân CPU, Python 3.13). Phần lớn thời gian nằm ở các thí nghiệm 10 seed × 100.000 Episode.
 4. Notebook ghi kết quả ra `pricing_results.npz` và các hình `figP*.png` trong thư mục chạy.
+5. Hình từng bước của một Episode (`results/figP9_algorithm_steps.png`) vẽ bằng script riêng: `MC_DATA=/đường/dẫn/hotel_bookings.csv python make_figP9.py` (chạy trong thư mục `case_mc_pricing/`; mất vài giây).
 
 ## 4. Nội dung notebook
 
@@ -50,7 +51,7 @@ pip install -r requirements.txt
 
 scikit-learn không có thuật toán học tăng cường. Bản "scikit-learn" trong notebook chỉ thay **bước ước lượng Q** bằng hồi quy Ridge trên one-hot; môi trường, vòng lặp GPI và cải thiện chính sách vẫn là mã tự viết.
 
-> [ĐIỀN] Ghi kết luận sau khi xác nhận với giảng viên hoặc tìm được thư viện RL phù hợp.
+Vì vậy bản tự cài đặt bằng NumPy là bản chính. Bản scikit-learn đóng vai trò kiểm chứng: với one-hot của từng ô (s, a), hồi quy bình phương tối thiểu cho đúng trung bình Return theo ô, nên nếu hai bản cho cùng Q thì bước ước lượng Q của bản NumPy là đúng. Kết quả TN0 xác nhận điều này (sai khác Q lớn nhất 1,15×10⁻⁷ €, chính sách giống nhau 1000/1000 lần). Nhóm không dùng thư viện học tăng cường chuyên dụng vì các thư viện phổ biến chỉ cung cấp môi trường (Gymnasium) hoặc thuật toán học sâu (Stable-Baselines3), không có sẵn Monte Carlo Control dạng bảng, còn môi trường định giá ở đây là bộ mô phỏng do nhóm tự xây.
 
 ## 7. Tài liệu kiểm chứng
 
@@ -59,4 +60,4 @@ scikit-learn không có thuật toán học tăng cường. Bản "scikit-learn"
 
 ## 8. Mã nguồn tham khảo
 
-> [ĐIỀN] Liệt kê mã nguồn đã tham khảo hoặc chỉnh sửa, kèm nguồn và giấy phép. Nếu không có, ghi rõ "không có".
+Không có. Nhóm không sao chép hay chỉnh sửa mã nguồn từ nguồn bên ngoài. Mã nguồn được viết với sự hỗ trợ của AI (xem [`docs/ai_log.md`](docs/ai_log.md)) và chỉ gọi các thư viện công khai liệt kê trong `requirements.txt`.

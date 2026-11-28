@@ -56,4 +56,4 @@ Lưu ý quan trọng:
 
 ## 7. Mã nguồn tham khảo
 
-> [ĐIỀN] Liệt kê mã nguồn đã tham khảo hoặc chỉnh sửa, kèm nguồn và giấy phép. Nếu không có, ghi rõ "không có".
+Không có. Nhóm không sao chép hay chỉnh sửa mã nguồn từ nguồn bên ngoài. Mã nguồn được viết với sự hỗ trợ của AI (xem [`docs/ai_log.md`](docs/ai_log.md)) và chỉ gọi các thư viện công khai liệt kê trong `requirements.txt`.
