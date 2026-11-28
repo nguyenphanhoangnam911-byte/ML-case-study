@@ -9,7 +9,7 @@ Mã tự cài đặt: [`src/mc_pricing.py`](src/mc_pricing.py). Bộ mô phỏng
 ## 1. Dữ liệu
 
 - Bộ dữ liệu: *Hotel Booking Demand* (Antonio, de Almeida & Nunes, 2019), 119.390 dòng. Dùng City Hotel, phòng loại A.
-- Nguồn tải (theo ghi chú trong notebook): kaggle.com/datasets/jessemostipak/hotel-booking-demand. [CẦN XÁC MINH NGUỒN: kiểm tra lại URL, trích dẫn bài báo gốc và giấy phép].
+- Nguồn tải: Kaggle, https://www.kaggle.com/datasets/jessemostipak/hotel-booking-demand (bản đăng lại của bộ dữ liệu gốc). Bài báo gốc: Antonio, N., de Almeida, A., & Nunes, L. (2019). Hotel booking demand datasets. *Data in Brief*, 22, 41–49. https://doi.org/10.1016/j.dib.2018.11.126.
 - Đặt file `hotel_bookings.csv` **cùng thư mục với notebook** (`notebooks/hotel_bookings.csv`). File này bị `.gitignore` loại, không commit.
 
 ## 2. Môi trường
@@ -26,7 +26,7 @@ pip install -r requirements.txt
 
 1. Mở notebook bằng Jupyter, chạy **Restart & Run All**.
 2. Seed cố định (10 seed cho các thí nghiệm), 100.000 episode mỗi lần chạy.
-3. Thời gian chạy: [ĐO LẠI trên máy của nhóm]. Notebook ghi khoảng 10 phút trên CPU 2 nhân; lần kiểm chứng mất khoảng 20 phút khi máy đang chạy tác vụ khác cùng lúc.
+3. Thời gian chạy: khoảng 20 phút cho toàn bộ notebook (đo lại ngày 28/11/2026: 1.219 giây trên máy 2 nhân CPU, Python 3.13). Phần lớn thời gian nằm ở các thí nghiệm 10 seed × 100.000 Episode.
 4. Notebook ghi kết quả ra `pricing_results.npz` và các hình `figP*.png` trong thư mục chạy.
 
 ## 4. Nội dung notebook

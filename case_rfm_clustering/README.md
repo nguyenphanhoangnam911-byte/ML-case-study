@@ -9,7 +9,7 @@ Mã tự cài đặt: [`src/rfm_scratch.py`](src/rfm_scratch.py). Bản tự cà
 ## 1. Dữ liệu
 
 - Bộ dữ liệu: *Online Retail* (UCI Machine Learning Repository), 541.909 dòng × 8 cột, 01/12/2010 – 09/12/2011.
-- Nguồn tải: [CẦN XÁC MINH NGUỒN: ghi URL chính thức của UCI và giấy phép sử dụng].
+- Nguồn tải: UCI Machine Learning Repository, https://archive.ics.uci.edu/dataset/352/online+retail. Trích dẫn: Chen, D. (2015). *Online Retail* [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5BW33. Giấy phép: CC BY 4.0.
 - Đặt file `data.csv` **cùng thư mục với notebook** (`notebooks/data.csv`). Notebook đọc với `encoding="latin1"`. File này bị `.gitignore` loại, không commit.
 
 ## 2. Môi trường
@@ -32,7 +32,7 @@ Lưu ý quan trọng:
 
 1. Mở notebook bằng Jupyter, chạy **Restart & Run All**.
 2. Seed cố định: `SEED = 42`, số cụm `K = 4`.
-3. Thời gian chạy: [ĐO LẠI trên máy của nhóm]. Lần kiểm chứng đã chạy xong toàn bộ notebook trong khoảng 2–4 phút trên máy 2 nhân.
+3. Thời gian chạy: khoảng 2–3 phút cho toàn bộ notebook (đo lại ngày 28/11/2026: 137 giây trên máy 2 nhân CPU, Python 3.13, scikit-learn 1.6.1). K-Medoids chiếm phần lớn thời gian (khoảng 23–30 giây mỗi lần huấn luyện).
 
 ## 4. Nội dung notebook
 

@@ -4,7 +4,7 @@ Số dòng theo `case_mc_pricing/src/mc_pricing.py` (bản nộp). Sau mỗi l�
 
 | Công thức / bước | Biến thể | Hàm / lớp | Dòng | Bằng chứng kiểm chứng | AI log ID |
 |---|---|---|---|---|---|
-| P(mua) = P(WTP ≥ giá), WTP ~ LogNormal | Mô hình nhu cầu | `Scenario.prob_buy` | 62–63 | Bảng P(mua) theo giá; đường cong đặt phòng mô phỏng khớp dữ liệu (Hình M6.1) | AI-04, AI-05 |
+| P(mua) = P(WTP ≥ giá), WTP ~ LogNormal | Mô hình nhu cầu | `Scenario.prob_buy` | 62–63 | Bảng P(mua) theo giá; đường cong đặt phòng mô phỏng khớp dữ liệu (Figure 23 trong báo cáo) | AI-04, AI-05 |
 | Cường độ khách mua λ(t, p) = Σ λts·Ps(mua \| p) | Mô hình nhu cầu | `Scenario.rate` | 65–67 | Như trên | AI-04, AI-05 |
 | V_t(x) = max_p Σ_d P(D = d)·[p·min(d, x) + V_{t−1}(x − min(d, x))] | DP lùi (đáp án chuẩn) | `PricingMDP.solve` | 90–97 | V*(30, 10) = 1.021,0 € (đã chạy lại) | AI-04, AI-05 |
 | Doanh thu kỳ vọng chính xác của một chính sách | Đánh giá | `PricingMDP.evaluate` | 99–108 | Giá cố định 100 €: 976,0 € | AI-04, AI-05 |
